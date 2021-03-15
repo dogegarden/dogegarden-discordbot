@@ -33,3 +33,6 @@
 ```
 CLIENT_TOKEN=
 ```
+
+## Credits
+Thank you to Abalon#2525/https://github.com/alon-abadi for the awesome logo!
