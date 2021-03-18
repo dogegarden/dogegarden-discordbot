@@ -10,8 +10,9 @@ exports.run = (client, message, args) => {
     axios.get('https://api.dogehouse.xyz/v1/statistics')
   .then(function (response) {
     let stats = response.data
-    embed.addField('Total Rooms', stats.totalRooms, true)
-    embed.addField('Total Online', stats.totalOnline, true)
+    embed.addField('Total Rooms', stats.totalRooms)
+    embed.addField('Total Scheduled Rooms', stats.totalScheduledRooms)
+    embed.addField('Total Online', stats.totalOnline)
     message.channel.send(embed)
 }).catch(function (error) {
     message.channel.send(`Sorry, I had trouble finding the doges! \`${error}\``)
