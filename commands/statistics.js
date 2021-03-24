@@ -13,7 +13,7 @@ exports.run = (client, message, args) => {
     embed.addField('Total Rooms', stats.totalRooms)
     embed.addField('Total Scheduled Rooms', stats.totalScheduledRooms)
     embed.addField('Total Online', stats.totalOnline)
-    embed.addField('Total Bots Online', stats.botAccounts.totalBotsOnline)
+    embed.addField('Total Bots Online', stats.totalBotsOnline)
     message.channel.send(embed)
 }).catch(function (error) {
     message.channel.send(`Sorry, I had trouble finding the doges! \`${error}\``)
