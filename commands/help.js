@@ -1,14 +1,17 @@
 const { MessageEmbed } = require('discord.js');
+const Calls = require('../utils/monk');
 
-exports.run = (client, message, args) => {
-    
+exports.run = async (client, message, args) => {
+    let guild = await Calls.guild(message.guild.id)
     let embed = new MessageEmbed()
-    .setTitle('Help')
+    .setAuthor('DogeGarden | Help', client.user.avatarURL())
     .setFooter(`dogehouse.xyz`).setTimestamp()
     .setDescription('List of commands.')
-    .addField('!rooms', 'Display all the current rooms.')
-    .addField('!statistics', 'Display statistics of the site.')
-    .addField('!invite', 'Invite the bot to your server.')
+    .addField(guild.guild_prefix + 'rooms', 'Display all the current rooms.', true)
+    .addField(guild.guild_prefix + 'bots', 'Display all the current bots online.', true)
+    .addField(guild.guild_prefix + 'counter', 'Display commands and info for the live statistics system.', true)
+    .addField(guild.guild_prefix + 'statistics', 'Display statistics of the site.', true)
+    .addField(guild.guild_prefix + 'invite', 'Invite the bot to your server.', true)
     .setColor('#e6bc6a')
     message.channel.send(embed)
 

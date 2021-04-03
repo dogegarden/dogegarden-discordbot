@@ -1,7 +1,6 @@
 const { Client: DiscordClient, Collection } = require('discord.js');
 const path = require('path');
 const fs = require('fs').promises;
-const mongoose = require('mongoose');
 
 class Doge extends DiscordClient {
     constructor() {
@@ -11,7 +10,6 @@ class Doge extends DiscordClient {
          * @type {Collection<string, {run: function(...args), help: { name:string, aliases: string[] }}>}
          */
         this.commands = new Collection();
-        this.mongoose = require('../utils/mongoose');
     }
     /**
      * @returns {Promise<import('discord.js').User>|null}

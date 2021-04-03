@@ -1,7 +1,7 @@
 const { Collection, MessageAttachment, MessageEmbed } = require('discord.js');
 
 const ms = require('pretty-ms');
-
+const Calls = require('../utils/monk')
 /**
  * @type {Collection<string, boolean>}
  */
@@ -17,15 +17,16 @@ const cooldowns = new Collection();
  * @param {import('discord.js').Message} message
  */
 module.exports = async (client, message) => {
-
+    let guild = await Calls.guild(message.guild.id)
+    let prefix = guild.guild_prefix
     if (message.author.bot) return;
     if (!message.guild) return;
 
     if (!message.member || message.member.partial) await message.member.fetch();
 
-    if (message.content.indexOf('!') !== 0) return;
+    if (message.content.indexOf(prefix) !== 0) return;
 
-    const args = message.content.slice(1).trim().split(/ +/g);
+    const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
 
     const cmd = client.commands.get(command) || client.commands.find((c) => c.help.aliases && c.help.aliases.includes(command));

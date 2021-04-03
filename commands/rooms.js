@@ -4,7 +4,7 @@ const { MessageEmbed } = require('discord.js');
 exports.run = (client, message, args) => {
     
     let embed = new MessageEmbed()
-    .setTitle('Rooms')
+    .setAuthor('DogeGarden | Rooms', client.user.avatarURL())
     .setFooter(`dogehouse.xyz`).setTimestamp()
     .setColor('#e6bc6a')
     axios.get('https://api.dogehouse.xyz/v1/popularRooms')
