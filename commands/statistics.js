@@ -7,7 +7,7 @@ exports.run = (client, message, args) => {
     .setAuthor('DogeGarden | Statistics', client.user.avatarURL())
     .setFooter(`dogehouse.xyz`).setTimestamp()
     .setColor('#e6bc6a')
-    axios.get('https://api.dogehouse.xyz/v1/statistics')
+    axios.get('https://api.dogegarden.net/v1/statistics')
   .then(function (response) {
     let stats = response.data
     embed.addField('Total Rooms', stats.totalRooms)
