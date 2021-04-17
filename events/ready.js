@@ -13,7 +13,7 @@ module.exports = async client => {
     client.user.setActivity(client.guilds.cache.size + ' guilds | dogehouse.xyz',  { type: 'WATCHING' })
 
     async function updateCounters() {
-        let statistics = await axios.get('https://api.dogehouse.xyz/v1/statistics')
+        let statistics = await axios.get('https://api.dogegarden.net/v1/statistics')
         guilds.forEach(guild => {
             if (!guild.guild_counterEnabled) return;
             try {
