@@ -7,7 +7,7 @@ exports.run = (client, message, args) => {
     .setAuthor('DogeGarden | Rooms', client.user.avatarURL())
     .setFooter(`dogehouse.xyz`).setTimestamp()
     .setColor('#e6bc6a')
-    axios.get('https://api.dogehouse.xyz/v1/popularRooms')
+    axios.get('https://api.dogegarden.net/v1/popularRooms')
   .then(function (response) {
     let rooms = response.data.rooms
     embed.setDescription(`Showing \`${rooms.length}\` rooms.`)
