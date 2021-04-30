@@ -7,7 +7,7 @@ exports.run = async (client, message, args) => {
 
         this.commands.forEach(cmd => {
             let cmdinfo = cmd
-            allcmds+="`"+guild.guild_prefix+cmdinfo.name+" "+cmdinfo.usage+"` ~ "+cmdinfo.description+"\n"
+            allcmds+="`"+guild.guild_prefix+cmdinfo.help.name+" "+cmdinfo.help.usage+"` ~ "+cmdinfo.help.description+"\n"
         })
 
         let embed = new MessageEmbed()
@@ -20,16 +20,16 @@ exports.run = async (client, message, args) => {
         else {
             let cmd = args[0]
             let command = this.commands.get(cmd)
-            if(!command)command = this.commands.find(x => x.aliases.includes(cmd))
+            if(!command)command = this.commands.find(x => x.help.aliases.includes(cmd))
             if(!command)return message.channel.send("Unknown Command")
             let commandinfo = new MessageEmbed()
-            .setTitle("Command: "+command.name+" info")
+            .setTitle("Command: "+command.help.name+" info")
             .setColor("#e6bc6a")
             .setDescription(`
-Name: ${command.name}
-Description: ${command.description}
-Usage: \`\`${guild.guild_prefix}${command.name} ${command.usage}\`\`
-Aliases: ${command.aliases.join(", ")}
+Name: ${command.help.name}
+Description: ${command.help.description}
+Usage: \`\`${guild.guild_prefix}${command.help.name} ${command.help.usage}\`\`
+Aliases: ${command.help.aliases.join(", ")}
 `)
             message.channel.send(commandinfo)
         }
