@@ -10,5 +10,6 @@ exports.run = async (client, message, args) => {
 exports.help = {
     name: 'ping',
     aliases: ['pong'],
-    description: 'Get the ping of the bot'
+    description: 'Get the ping of the bot',
+    usage: 'ping'
 };
