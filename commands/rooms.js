@@ -5,7 +5,7 @@ exports.run = (client, message, args) => {
     
     let embed = new MessageEmbed()
     .setAuthor('DogeGarden | Rooms', client.user.avatarURL())
-    .setFooter(`dogehouse.xyz`).setTimestamp()
+    .setFooter(`dogegarden.net`).setTimestamp()
     .setColor('#e6bc6a')
     axios.get('https://api.dogegarden.net/v1/popularRooms')
   .then(function (response) {

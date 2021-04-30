@@ -5,7 +5,7 @@ exports.run = async (client, message, args) => {
     let guild = await Calls.guild(message.guild.id)
     let embed = new MessageEmbed()
     .setAuthor('DogeGarden | Help', client.user.avatarURL())
-    .setFooter(`dogehouse.xyz`).setTimestamp()
+    .setFooter(`dogegarden.net`).setTimestamp()
     .setDescription('List of commands.')
     .addField(guild.guild_prefix + 'rooms', 'Display all the current rooms.', true)
     .addField(guild.guild_prefix + 'bots', 'Display all the current bots online.', true)
