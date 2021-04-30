@@ -20,10 +20,10 @@ exports.run = async (client, message, args) => {
         else {
             let cmd = args[0]
             let command = this.commands.get(cmd)
-            if(!command)command = client.commands.find(x => x.info.aliases.includes(cmd))
+            if(!command)command = this.commands.find(x => x.aliases.includes(cmd))
             if(!command)return message.channel.send("Unknown Command")
             let commandinfo = new MessageEmbed()
-            .setTitle("Command: "+command.info.name+" info")
+            .setTitle("Command: "+command.name+" info")
             .setColor("#e6bc6a")
             .setDescription(`
 Name: ${command.name}
