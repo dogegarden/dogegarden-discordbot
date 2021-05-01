@@ -38,5 +38,8 @@ exports.run = (client, message, args) => {
 };
 
 exports.help = {
-    name: 'rooms'
+    name: 'rooms',
+    aliases: ['r'],
+    description: 'Get info on rooms',
+    usage: ''
 };
