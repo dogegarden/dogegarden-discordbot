@@ -5,7 +5,7 @@ exports.run = async (client, message, args) => {
     let guild = await Calls.guild(message.guild.id)
         var allcmds = "";
 
-        this.commands.forEach(cmd => {
+        client.commands.forEach(cmd => {
             let cmdinfo = cmd
             allcmds+="`"+guild.guild_prefix+cmdinfo.help.name+" "+cmdinfo.help.usage+"` ~ "+cmdinfo.help.description+"\n"
         })
@@ -19,8 +19,8 @@ exports.run = async (client, message, args) => {
         if(!args[0])return message.channel.send(embed)
         else {
             let cmd = args[0]
-            let command = this.commands.get(cmd)
-            if(!command)command = this.commands.find(x => x.help.aliases.includes(cmd))
+            let command = client.commands.get(cmd)
+            if(!command)command = client.commands.find(x => x.help.aliases.includes(cmd))
             if(!command)return message.channel.send("Unknown Command")
             let commandinfo = new MessageEmbed()
             .setTitle("Command: "+command.help.name+" info")
@@ -33,6 +33,10 @@ Aliases: ${command.help.aliases.join(", ")}
 `)
             message.channel.send(commandinfo)
         }
+};
 exports.help = {
-    name: 'help'
+    name: 'help',
+    aliases: ['h'],
+    description: 'Get the help embed for the bot',
+    usage: ''
 };
