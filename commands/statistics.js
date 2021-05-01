@@ -22,5 +22,8 @@ exports.run = (client, message, args) => {
 };
 
 exports.help = {
-    name: 'statistics'
+    name: 'statistics',
+    aliases: ['stats'],
+    description: 'Get statistics of dogehouse',
+    usage: ''
 };
