@@ -31,8 +31,9 @@
 
 ### Default .env
 ```
-CLIENT_TOKEN=
+CLIENT_TOKEN=TOKEN
 ```
+Replace token with your bot token available from https://discord.com/developers/applications. 
 
 ## Credits
-Thank you to Abalon#2525/https://github.com/alon-abadi for the awesome logo!
+Thank you to Abalon#2525: https://github.com/alon-abadi for the awesome logo!
