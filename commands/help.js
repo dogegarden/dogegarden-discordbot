@@ -2,7 +2,6 @@ const { MessageEmbed } = require('discord.js');
 const Calls = require('../utils/monk');
 
 exports.run = async (client, message, args) => {
-    let guild = await Calls.guild(message.guild.id)
     let commandFields = []
     client.commands.array.forEach(command => {
         let field = new Object()
