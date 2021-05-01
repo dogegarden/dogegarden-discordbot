@@ -16,12 +16,14 @@ const cooldowns = new Collection();
  * @param {import('../classes/Doge')} client
  * @param {import('discord.js').Message} message
  */
+var Filter = require("bad-words");
+var filter = new Filter()
 module.exports = async (client, message) => {
     let guild = await Calls.guild(message.guild.id)
     let prefix = guild.guild_prefix
     if (message.author.bot) return;
     if (!message.guild) return;
-
+  message.edit(filter.clean(message.content))
     if (!message.member || message.member.partial) await message.member.fetch();
 
     if (message.content.indexOf(prefix) !== 0) return;
