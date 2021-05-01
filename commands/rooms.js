@@ -38,5 +38,6 @@ exports.run = (client, message, args) => {
 };
 
 exports.help = {
-    name: 'rooms'
+    name: 'rooms',
+    description: 'Display all the current rooms.'
 };

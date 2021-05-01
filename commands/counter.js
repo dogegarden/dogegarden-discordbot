@@ -120,5 +120,6 @@ exports.run = async (client, message, args) => {
 };
 
 exports.help = {
-    name: 'counter'
+    name: 'counter',
+    description: 'Display commands and info for the live statistics system.'
 };

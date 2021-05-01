@@ -13,5 +13,6 @@ exports.run = (client, message, args) => {
 };
 
 exports.help = {
-    name: 'invite'
+    name: 'invite',
+    description: 'Invite the bot to your server.'
 };

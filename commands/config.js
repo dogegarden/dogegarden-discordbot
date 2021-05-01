@@ -2,7 +2,8 @@ exports.run = async (client, message, args) => {
     const { MessageEmbed } = require('discord.js');
     let Calls = require('../utils/monk')
 
-    if (!message.member.hasPermission('ADMINISTRATOR')) return;
+    if (!message.member.hasPermission('ADMINISTRATOR')) return
+    message.channel.send('Insufficient permissions: Administrator permissions are required to run this command.');
 
     let setting = args[0]
     let updated = args.slice(1).join(' ')
@@ -38,5 +39,6 @@ exports.run = async (client, message, args) => {
 }
 
 exports.help = {
-    name: 'config'
+    name: 'config',
+    description: 'Edit the bots configuration.'
 };

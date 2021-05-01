@@ -21,5 +21,6 @@ exports.run = (client, message, args) => {
 };
 
 exports.help = {
-    name: 'statistics'
+    name: 'statistics',
+    description: 'Display statistics of the site.'
 };

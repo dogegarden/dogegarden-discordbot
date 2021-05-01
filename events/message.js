@@ -33,7 +33,7 @@ module.exports = async (client, message) => {
 
     if (!cmd) return
 
-    if (cmd.help.permission && !message.member.roles.cache.find((r) => r.name === cmd.help.permission)) return;
+    if (cmd.help.roleRequired && !message.member.roles.cache.find((r) => r.name === cmd.help.roleRequired)) return;
 
     if (!cooldowns.has(cmd.name)) cooldowns.set(cmd.name, new Collection());
     const now = Date.now();

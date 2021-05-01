@@ -8,5 +8,6 @@ exports.run = async (client, message, args) => {
 };
 
 exports.help = {
-    name: 'ping'
+    name: 'ping',
+    description: "Displays the bots ping."
 };
