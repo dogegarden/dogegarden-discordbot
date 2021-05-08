@@ -38,5 +38,8 @@ exports.run = async (client, message, args) => {
 }
 
 exports.help = {
-    name: 'config'
+    name: 'config',
+    aliases: ['conf'],
+    description: 'Update the prefix of the bot or see bot settings',
+    usage: '<prefix>'
 };

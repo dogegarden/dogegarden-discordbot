@@ -120,5 +120,8 @@ exports.run = async (client, message, args) => {
 };
 
 exports.help = {
-    name: 'counter'
+    name: 'counter',
+    aliases: ['count'],
+    description: 'Show a live counter of dogehouse stats',
+    usage: ''
 };
